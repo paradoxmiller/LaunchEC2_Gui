@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from tkinter import Tk, Label, Button
 import os
 
@@ -9,19 +11,19 @@ class AWSEC2GUI:
 		self.label = Label(master, text="Would you like to create an EC2 instance?", font = "Courier 20 bold")
 		self.label.pack()
 
-		self.greet_button = Button(master, text="Launch T2 Micro Instance", bg="#909090",fg='red', font = "Courier 16 bold", highlightbackground='#555555',activeforeground='red',activebackground='orange', command=self.greet)
+		self.greet_button = Button(master, text="Launch T2 Micro Instance", bg="#909090",fg='red', font = "Courier 16 bold", highlightbackground='#555555',activeforeground='red',activebackground='orange', bd="5", padx="15", pady="12", relief="raised", width="28", command=self.greet)
 		self.greet_button.pack()
 		
-		self.greet_button = Button(master, text="Launch M3 Medium Instance",bg="#909090", fg='red', font = "Courier 16 bold",highlightbackground='#555555', command=self.greetm3)
+		self.greet_button = Button(master, text="Launch M3 Medium Instance",bg="#909090", fg='red', font = "Courier 16 bold",highlightbackground='#555555',activeforeground='#757575',activebackground='#8e8e9e', bd="5", padx="15", pady="12", relief="raised", width="28", command=self.greetm3)
 		self.greet_button.pack()
 		
-		self.greet_button = Button(master, text="Launch M4 Large Instance",bg="#909090", fg='red', font = "Courier 16 bold",highlightbackground='#555555', command=self.greetm4)
+		self.greet_button = Button(master, text="Launch M4 Large Instance",bg="#909090", fg='red', font = "Courier 16 bold",highlightbackground='#555555',activeforeground='#757575',activebackground='#8e8e9e', bd="5", padx="15", pady="12", relief="raised", width="28", command=self.greetm4)
 		self.greet_button.pack()
 		
-		self.greet_button = Button(master, text="Launch M5 24xlarge Instance",bg="#909090", fg='red', font = "Courier 16 bold",highlightbackground='#555555', command=self.greetm5)
+		self.greet_button = Button(master, text="Launch M5 24xlarge Instance",bg="#909090", fg='red', font = "Courier 16 bold",highlightbackground='#555555',activeforeground='#757575',activebackground='#8e8e9e',bd="5", padx="15", pady="12", relief="raised", width="28", command=self.greetm5)
 		self.greet_button.pack()
 
-		self.close_button = Button(master, text="Exit", bg="#959595", fg='green', font = "Courier 18 bold", padx=20, pady=25,highlightbackground='#555555',activeforeground='green',activebackground='orange', command=master.quit)
+		self.close_button = Button(master, text="Exit", bg="#959595", fg='green', font = "Courier 16 bold", bd="5", padx=15, pady=12,highlightbackground='#555555',activeforeground='green',activebackground='orange', width="28", command=master.quit)
 		self.close_button.pack()
 
 	def greet(self):
@@ -47,5 +49,7 @@ class AWSEC2GUI:
 	
 
 root = Tk()
+root.title("AWS EC2 GUI")
+root.geometry("675x400+350+125")
 my_gui = AWSEC2GUI(root)
 root.mainloop()
